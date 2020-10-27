@@ -270,4 +270,177 @@
     \end{equation*}
 
 
+    \vspace{1cm}
+
+    \begin{flushleft}
+        Vamos ahora a calcular $EX^2 $ y $EY^2$  
+    \end{flushleft}
+
+    \begin{equation*}
+        \fbox{$
+            EX^2 = \displaystyle \int_{-\infty}^{+\infty}  x^2 f_{X}\left(x\right) \,\mathrm{d}x  = \displaystyle \int_{0}^{+\infty}  x^3 e^{-x} \,\mathrm{d}x
+        $}
+    \end{equation*}
+
+    \begin{flushleft}
+        Vamos ahora a calcular $\int_{0}^{+\infty}  x^3 e^{-x} \,\mathrm{d}x$ , tenemos : 
+    \end{flushleft}
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle \int_{0}^{+\infty}  x^3 e^{-x} \,\mathrm{d}x & = & \displaystyle \lim_{A \to \infty}  \int_{0}^{A}  x^3 e^{-x} \,\mathrm{d}x
+            \\
+            \\
+            && \mbox{tenemos : $ \int_{}^{}  x^3 e^{-x} \,\mathrm{d}x = - x^3e^{-x} - 3 \left(\left(x^2+ 2x + 2\right)e^{-x}\right)$} 
+            \\
+            && \mbox{por lo que nos queda que :}
+            \\
+            \\
+            & = &\displaystyle \lim_{A \to \infty}  \left[- x^3e^{-x} - 3 \left(\left(x^2+ 2x + 2\right)e^{-x}\right)\right] \vert_{0}^{A}
+            \\
+            \\
+            & = & \displaystyle \lim_{A \to \infty}  \left(- A^3e^{-A} - 3 \left(\left(A^2+ 2A + 2\right)e^{-A}\right)\right) + 6 
+            \\
+            \\
+            && \mbox{como : $\lim_{A \to \infty}  \left(- A^3e^{-A} - 3 \left(\left(A^2+ 2A + 2\right)e^{-A}\right)\right) = 0 $}
+            \\
+            \\
+            \mbox{Entonces nos queda que : }&&
+            \\
+            \\
+            \displaystyle \int_{0}^{+\infty}  x^3 e^{-x} \,\mathrm{d}x & = & 6
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Entonces tenemos el valor de $EX^2$
+    \end{flushleft}
+
+    \begin{equation*}
+        \fbox{$
+            EX^2 = \displaystyle \int_{0}^{+\infty}  x^3 e^{-x} \,\mathrm{d}x  =  6
+        $}
+    \end{equation*}
+
+    \begin{flushleft}
+        Ahora vamos a calcular $EY^2$
+    \end{flushleft}
+
+    \begin{equation*}
+        \fbox{$
+            EY^2 = \displaystyle \int_{-\infty}^{+\infty}  y^2 f_{Y}\left(y\right) \,\mathrm{d}y  = \displaystyle \int_{0}^{+\infty}  y^2 e^{-y} \,\mathrm{d}y
+        $}
+    \end{equation*}
+
+    \begin{flushleft}
+        tenemos ahora lo siguiente : 
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle \int_{0}^{+\infty}  y^2 e^{-y} \,\mathrm{d}y & = &\displaystyle \lim_{A \to \infty} \displaystyle \int_{0}^{A}  y^2 e^{-y} \,\mathrm{d}y
+            \\
+            \\
+            && \mbox{sabemos que : $\displaystyle \int_{}^{}  y^2 e^{-y} \,\mathrm{d}y$}  =  - \left(y^2 + 2y + 2 \right) e^{-y}
+            \\
+            \\
+            & = & \displaystyle \lim_{A \to \infty} \left[ - \left(y^2 + 2y + 2 \right) e^{-y}\right] \vert_{0}^{A}
+            \\
+            \\
+            & = &  \displaystyle \lim_{A \to \infty} \left( - \left(A^2 + 2A + 2 \right) e^{-A}\right) + 2 
+            \\
+            \\
+            && \mbox{tenemos que : $ \displaystyle \lim_{A \to \infty} \left( - \left(A^2 + 2A + 2 \right) e^{-A}\right) = 0 $} 
+            \\
+            \\
+            \mbox{Por lo que tenemos que : }&&
+            \\
+            \\
+            \displaystyle \int_{0}^{+\infty}  y^2 e^{-y} \,\mathrm{d}y & = & 2
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Ahora tenemos tambien $EY^2$ :
+    \end{flushleft}
+
+    \begin{equation*}
+        \fbox{$
+            EY^2 = \displaystyle \int_{0}^{+\infty}  y^2 e^{-y} \,\mathrm{d}y  =  2
+        $}
+    \end{equation*}
+
+    \vspace{1cm} 
+
+    \begin{flushleft}
+        Podemos ahora calcular la covarianza y la correlaci\'on 
+    \end{flushleft}
+
+    \begin{equation*}
+        \fbox{$
+            cov \left(X,Y\right) = E\left[XY\right] - EX \hspace{1mm}EY
+        $}
+    \end{equation*}
+
+    \begin{flushleft}
+        como tenemos que $E\left[XY\right] = 2 , EX =2  , EY=1 $ podemos sustituir y calcular . Por lo que obtenemos que : 
+    \end{flushleft}
+
+    \begin{equation*}
+        \fbox{$
+            cov \left(X,Y\right) = 0 
+        $}
+    \end{equation*}
+
+    \begin{flushleft}
+        Ahora para calcular la correlaci\'on necesitamos los valores de $V\left(X\right)$ y $V\left(Y\right)$
+    \end{flushleft}
+
+    \begin{equation*}
+        \fbox{$
+            V\left(X\right)  =  EX^2 - \left(EX\right)^2
+        $}
+    \end{equation*}
+
+    \begin{flushleft}
+        Ahora si sustituimos y calculamos nos queda: 
+    \end{flushleft}
+    \begin{equation*}
+        \begin{array}{rcl}
+            V\left(X\right) & = & EX^2 - \left(EX\right)^2
+            \\ 
+            \\
+                            & = & 6 - \left(2\right)^2 = 6-4 
+            \\
+            \\
+                            & = & 2
+            \\
+            \\
+            V\left(Y\right) & = & EY^2  - \left(EY\right)^2
+            \\
+            \\
+                            & = & 2 - \left(1\right)^2
+            \\
+            \\
+                            & = & 1
+        \end{array}
+    \end{equation*}
+    
+
+    \begin{flushleft}
+        Ahora para calcular la correlaci\'on tenemos : 
+    \end{flushleft}
+
+    \begin{equation*}
+        \fbox{$
+            \rho \left(X,Y\right) = \displaystyle \frac{cov \left(X,Y\right)}{\sqrt{V\left(X\right)V\left(Y\right)}}
+        $}    
+    \end{equation*}
+
+    \begin{flushleft}
+        Si sustituimos y calculamos tenemos : 
+    \end{flushleft}
+
+    \begin{equation*}
+        \rho \left(X,Y\right) = \displaystyle \frac{cov \left(X,Y\right)}{\sqrt{V\left(X\right)V\left(Y\right)}} = \frac{0}{\sqrt{2}} = 0 
+    \end{equation*}
 \end{document}
