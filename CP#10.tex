@@ -1,0 +1,273 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+	\title{Respuesta de la Clase Pr\'actica 10}
+	\author{Daniel De La Cruz Prieto}
+	\date{\today}
+	
+    \maketitle
+    
+    \section*{Ejercicio 1 } 
+
+
+    \subsection*{ 1-a) La funci\'on de densidad de un vector aleatorio continuo es :}
+
+    \begin{equation*}
+        f\left(x,y\right) = \begin{cases}
+    
+        xe^{-\left(X+Y\right)} & \mbox{$x\leq0$ y $y\leq 0$}
+        \\
+               0             & \mbox{en otro caso}
+    
+       \end{cases}
+    \end{equation*}
+
+
+    \begin{flushleft}
+        Tenemos $F_{\left(X\right)}$ la podemos dobtener de la siguiente expresi\'on
+    \end{flushleft}
+
+   	\begin{equation*} 
+	    \fbox{$
+	   	F_{X} =  \displaystyle \lim_{y \to + \infty} F\left(x,y\right) = \displaystyle  F_{\left(X,Y\right)} \left(x,+\infty\right) = \int_{0}^{x}\int_{0}^\infty f\left(u,y\right) dy du	   	
+	   	$}
+    \end{equation*} 
+
+	\begin{equation*} 
+	    \begin{array}{rcl}
+	        \to\int_{0}^{x} \int_{0}^{+\infty} f \left(u,y\right) dy du & = &  \int_{0}^{x} \left(\int_{o}^{+ \infty}xe^{-\left(x + y\right)} dy\right)du
+	        \\
+	        \\
+	        \to \int_{0}^{+ \infty} xe^{-\left(x+y\right)}dy & = & xe ^{-\left(x\right)} \int_{0}^{+ \infty} e^{-\left(y\right)}dy = \displaystyle xe^{-\left(x\right)} * \lim_{A\to + \infty} \int_{0}^{A} e^{-\left(y\right)} dy
+	        \\
+	        \\
+	        & = &\displaystyle xe^{-\left(x\right)}  \lim_{A\to+\infty} \left[ -e^{\left(-y\right)}\right]\vert_{0}^{A}   = \displaystyle xe^{-\left(x\right)}* \lim_{A\to+\infty} \left[ -e^{-A} + e^0\right]
+	        \\
+	        \\
+            & = & xe^{-\left(x\right)}
+            \\
+	    \end{array}
+    \end{equation*}        
+  
+    Entonces :
+
+    \begin{equation*}
+        \int_{o}^{+\infty} ue^{-u}du = \int_{0}^{x}ue^{-u} = \int_{o}^{x}   ue^{-u} du
+    \end{equation*}
+    
+    Luego teniendo que :
+    
+    \begin{equation*}
+       \fbox{$
+        \int xe^{-x}d = -\left(x+1\right)e^{-x}
+        $}
+    \end{equation*}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \int_{o}^{x} ue^{-u}du & = & \displaystyle  [-\left(u+1\right)e^{-u}]\vert_{o}^{x}
+            \\
+            \\
+            \int_{o}^{x} ue^{-u}du & = & \displaystyle -\left(x+1\right)e^{-x} - [-\left(0+1\right)e^{-0}]
+            \\
+            \\
+            & = & -\left(x+1\right)e^{-x}+1
+            \\
+            \\
+            \int_{o}^{x} ue^{-u}du & = & 1 -\left(x+1\right)e^{-x} 
+            \\
+        \end{array}
+    \end{equation*}
+
+    Por lo tanto :
+
+    \begin{equation*}
+       \fbox{$F_{X} = 1 - \left(x+1\right)e^{-x}$}
+    \end{equation*}
+
+    Dada la ecuaci\'on siguinte para calcular $F_{Y}$ :
+
+    \begin{equation*} 
+        \fbox{$
+            F_{Y} = \displaystyle\lim_{x\to+\infty} F_{\left(x,y\right)}\left(+\infty,x\right)=\int_{-\infty}^{y} \int_{-\infty}^{+\infty} f\left(x,u\right) dx du
+        $}
+    \end{equation*} 
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \int_{0}^{y}\int_{0}^{+\infty}xe^{-\left(x+u\right)}dx du & = & 
+            \int_{0}^{y} \left(\int_{0}^{+\infty}xe^{-\left(x+u\right)}dx\right)du 
+            \\
+            \\
+            \int_{0}^{y}\int_{0}^{+\infty}xe^{-\left(x+u\right)}dx du & = & \int_{0}^{+\infty}xe^{-x}e^{-u}dx = e^{-u}\int_{0}^{+\infty}xe^{-x}dx 
+            \\
+            \\
+            \to\int_{0}^{+\infty}xe^{-\left(x+u\right)dx du} & = & \int_{0}^{+\infty}xe^{-x}e^{-u}dx = e^{-u}\int_{0}^{+\infty}xe^{-x}dx
+            \\
+        \end{array}
+    \end{equation*}
+    Tenamos que :
+      \begin{equation*}
+         \fbox{$\int xe^{-x}dx = -\left(x+1\right)e^{-x}$}
+      \end{equation*}
+    Por lo tanto :
+    \begin{equation*}
+        \begin{array}{rcl}
+            \to\int_{0}^{+\infty}xe^{-x} dx & = & \displaystyle \lim_{A\to+\infty}\int_{0}^{A}xe^{-x}dx
+            \\
+            \\
+            \to\int_{0}^{+\infty}xe^{-x} dx & = &  \displaystyle \lim_{A\to + \infty}[-\left(x+1\right)e^{-x}] \vert_{0}^{A} 
+            \\
+            \\
+            \to\int_{0}^{+\infty}xe^{-x} dx & = &  \displaystyle\lim{A\to+\infty} -\left(A+1\right)e^{-A}+1
+            \\
+            \\
+            \to\int_{0}^{+\infty}xe^{-x} dx & = &  \displaystyle \lim_{A\to+\infty}-Ae^{-A}-e^{-A}+1
+            \\
+            \\
+            \to\int_{0}^{+\infty}xe^{-x} dx & = &  \displaystyle\lim_{A\to+\infty}-Ae^{-A}-\lim_{A\to+\infty}e^{-A}+1
+            \\
+            \\
+            \to\int_{0}^{+\infty}xe^{-x} dx & = &  1
+        \end{array}
+    \end{equation*}
+
+    Luego comprobando que:
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \int_{0}^{y}\left(\int_{0}^{+\infty}xe^{-\left(x+u\right)}dx\right)du & = & \int_{0}^{y} e^{-u }du 
+            \\
+            \\
+            \int_{0}^{y}\left(\int_{0}^{+\infty}xe^{-\left(x+u\right)}dx\right)du & = & -e^{-4}\vert_{o}^{y}
+            \\
+            \\
+            \int_{0}^{y}\left(\int_{0}^{+\infty}xe^{-\left(x+u\right)}dx\right)du & = & -e^{-y}+e^{-0}
+            \\
+            \\
+            \int_{0}^{y}\left(\int_{0}^{+\infty}xe^{-\left(x+u\right)}dx\right)du & = & 1 -e^{-y}
+        \end{array}
+    \end{equation*}
+
+    Finalmente tenemos que :
+
+    \begin{equation*}
+        \fbox{$
+        F_{Y}= 1 - e^{-y}
+        $}
+    \end{equation*}
+
+
+    \subsection*{1-b) Determinar si las variables $X$ y $Y$ son independientes y $\rho \left(X,Y\right)$}
+    
+    \begin{flushleft}
+        Para calcular $\rho \left(X,Y\right)$  tenemos que calcular primero : $E\left[XY\right]$ , $EX$, $EY$ , $EX^2$ y $EY^2$   
+    \end{flushleft}
+    
+
+    \begin{flushleft}
+        Primero vamos a calcular $E\left[XY\right]$ para eso tenemos: 
+    \end{flushleft}
+    \begin{equation*}
+        \fbox{$
+        E\left[XY\right] = \displaystyle \int_{- \infty}^{+ \infty} \int_{-\infty}^{+\infty} xy f\left(x,y\right) \,\mathrm{d}y  \,\mathrm{d}x  = \int_{0}^{+\infty} \int_{0}^{+\infty} x^2ye^{-\left(x+y\right)} \,\mathrm{d}y  \,\mathrm{d}x 
+        $}
+    \end{equation*}
+
+    \begin{flushleft}
+        Primero calculo $\int_{0}^{+ \infty} x^2ye^{-\left(x+y\right)} \,\mathrm{d}y $ 
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle \int_{0}^{+ \infty} x^2ye^{-\left(x+y\right)} \,\mathrm{d}y  &= & \displaystyle  x^2 e^{-x} \int_{0}^{+\infty}  y e^ {-y}\,\mathrm{d}y
+            \\
+            \\
+            & = &\displaystyle x^2 e^{-x}  \lim_{A \to \infty}  \int_{0}^{A} ye^{-y} \,\mathrm{d}y
+            \\
+            \\
+            && \mbox{Ahora tenemos que $\displaystyle \int ye^{-y} dy = - \left(y+1\right) e^{-y}$}
+            \\
+            && \mbox{Por lo que si sustiyuimos tenemos : }
+            \\
+            \\
+            & = & \displaystyle x^2 e^{-x}  \lim_{A \to \infty}  \left[- \left(y+1\right) e^{-y}\right] \vert _{0}^{A}
+            \\
+            \\
+            & = & \displaystyle x^2 e^{-x} \left( \lim_{A \to \infty} \left[- \left(A+1\right) e^{-A}\right] - \left[- \left(0+1\right) e^{0}\right]\right)  
+            \\
+            \\
+            && \mbox{tenemos que: $\lim_{A \to \infty}\left( \left(- \left(A+1\right) e^{-A}\right) + 1 \right)  = 1 $}
+            \\
+            \mbox{Por lo que : }&&
+            \\
+            \\
+            \displaystyle \int_{0}^{+ \infty} x^2ye^{-\left(x+y\right)} \,\mathrm{d}y & = & \displaystyle x^2e^{-x}
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Ahora tenemos que  $\displaystyle \int_{0}^{+\infty} \left(\int_{0}^{+\infty} x^2ye^{-\left(x+y\right)} \,\mathrm{d}y \right) \,\mathrm{d}x  = \displaystyle \int_{0}^{+\infty} \left(x^2e^{-x} \right) \,\mathrm{d}x  $  
+    \end{flushleft}
+
+    \begin{flushleft}
+        Vamos ahora a calcular la instegral : $\displaystyle \int_{0}^{+\infty} x^2e^{-x}  \,\mathrm{d}x$ , tenemos : 
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle \int_{0}^{+\infty} x^2e^{-x}  \,\mathrm{d}x & = & \displaystyle \lim_{A \to \infty} \int_{0}^{A} x^2e^{-x}  \,\mathrm{d}x  
+            \\
+            \\
+            && \mbox{tenemos que: $\displaystyle \int_{}^{} x^2e^{-x}  \,\mathrm{d}x = \left(-x^2 -2x -2 \right)e^{-x}$}
+            \\
+            \\
+            & = &\displaystyle \lim_{A \to \infty}  \left[\left(-x^2 -2x -2 \right)e^{-x}\right] \vert_{0}^{A}
+            \\
+            \\
+            & = &\displaystyle  \lim_{A \to \infty}  \left(\left(-A^2 -2A -2 \right)e^{-A}\right) + 2 
+            \\
+            \\
+            && \mbox{dado que $\displaystyle  \lim_{A \to \infty}  \left(\left(-A^2 -2A -2 \right)e^{-A}\right) = 0  $}
+            \\
+            \\
+            \mbox{Entonces no queda : } &&
+            \\
+            \\
+            \displaystyle \int_{0}^{+\infty} x^2e^{-x}  \,\mathrm{d}x  & = & 2 
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Entonces tenemos que : 
+    \end{flushleft}
+
+    \begin{equation*}
+        \fbox{$
+            E\left[XY\right] = \displaystyle \int_{0}^{+\infty} \int_{0}^{+\infty} x^2ye^{-\left(x+y\right)} \,\mathrm{d}y  \,\mathrm{d}x = 2
+        $}
+    \end{equation*}
+
+    \vspace{1cm}
+
+    \begin{flushleft}
+        Ahora para calcular los valores de $EX$ , $EY$ necesito primero calcular :
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{cp{1cm}c}
+            \fbox{$
+            f_X\left(x\right) =\displaystyle  \int_{-\infty}^{+\infty} f\left(x,y\right) \,\mathrm{d}y
+            $}
+            &
+            &
+            \fbox{$
+            f_Y\left(y\right) =\displaystyle  \int_{-\infty}^{+\infty} f\left(x,y\right) \,\mathrm{d}x
+            $}
+        \end{array}
+    \end{equation*}
+
+
+\end{document}
