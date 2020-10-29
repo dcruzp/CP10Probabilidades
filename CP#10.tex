@@ -170,6 +170,7 @@
     \begin{flushleft}
         Primero vamos a calcular $E\left[XY\right]$ para eso tenemos: 
     \end{flushleft}
+
     \begin{equation*}
         \fbox{$
         E\left[XY\right] = \displaystyle \int_{- \infty}^{+ \infty} \int_{-\infty}^{+\infty} xy f\left(x,y\right) \,\mathrm{d}y  \,\mathrm{d}x  = \int_{0}^{+\infty} \int_{0}^{+\infty} x^2ye^{-\left(x+y\right)} \,\mathrm{d}y  \,\mathrm{d}x 
@@ -213,7 +214,7 @@
     \end{flushleft}
 
     \begin{flushleft}
-        Vamos ahora a calcular la instegral : $\displaystyle \int_{0}^{+\infty} x^2e^{-x}  \,\mathrm{d}x$ , tenemos : 
+        Vamos ahora a calcular la integral : $\displaystyle \int_{0}^{+\infty} x^2e^{-x}  \,\mathrm{d}x$ , tenemos : 
     \end{flushleft}
 
     \begin{equation*}
@@ -269,8 +270,121 @@
         \end{array}
     \end{equation*}
 
+    \begin{center}
+        \begin{equation*}
+            \begin{array}{c|c}
+                \begin{array}{rcl}
+                    f_{X}\left(x\right) & = & \displaystyle\int_{-\infty}^{+\infty}f{\left(X,Y\right)} dy 
+                    \\
+                    \\
+                    f_{X}\left(x\right) & = & \displaystyle\int_{0}^{+\infty}xe^-\left(x+y\right)dy
+                    \\
+                    \\
+                    f_{X}\left(x\right) & = & \displaystyle\int_{0}^{+\infty}xe^{-x}e^{-y}dy
+                    \\
+                    \\
+                    f_{X}\left(x\right) & = & \displaystyle xe^{-x }\int_{0}^{+\infty}e^{-y}dy
+                \end{array}
+                &
+                \begin{array}{l}
+                    \mbox{Calculos adicionales :}
+                    \\
+                    \begin{array}{rcl}
+                        \int_{0}^{+\infty}e^{-y}dy & = & \displaystyle\lim_{A\to\infty}\int_{0}^{A}e^{-y}dy
+                        \\
+                        \\
+                        \int_{0}^{+\infty}e^{-y}dy & = & \displaystyle\lim_{A\to\infty}[-e^{-y}]\vert_{0}^{A}
+                        \\
+                        \\
+                        \int_{0}^{+\infty}e^{-y}dy & = & -e^{-A} + e ^{-0}
+                        \\
+                        \\
+                        \int_{0}^{+\infty}e^{-y}dy & = & 0 + 1
+                        \\
+                        \\
+                        \int_{0}^{+\infty}e^{-y}dy & = & 1
+                    \end{array}
+                \end{array}
+            \end{array}
+        \end{equation*}
+    \end{center}
 
-    \vspace{1cm}
+    \begin{flushleft}
+        Por lo tanto :  \fbox{$f_{X}(x) = xe^{-x}$}
+    \end{flushleft}
+   
+
+    \vspace{0.5cm }
+
+    \begin{flushleft}
+        Ahora calculamos $f_{Y}(y)$
+    \end{flushleft}
+   
+    \begin{center}
+        \begin{equation*}
+            \begin{array}{c|c}
+                \begin{array}{rcl}
+                    f_{Y}(Y) & = & \displaystyle\int_{-\infty}^{+\infty}f{\left(X,Y\right)} dy 
+                    \\
+                    \\
+                    f_{Y}(Y) & = & \displaystyle\int_{0}^{+\infty}xe^-\left(x+y\right)dy
+                    \\
+                    \\
+                    f_{Y}(Y) & = & \displaystyle\int_{0}^{+\infty}xe^{-x}e^{-y}dy
+                    \\
+                    \\
+                    f_{Y}(Y) & = & \displaystyle e^{-y }\int_{0}^{+\infty}xe^{-x}dy
+                    \\
+                    \\
+                    f_{Y}(Y) & = & e^{-y}
+                \end{array}
+                &
+                \begin{array}{l}
+                    \mbox{Calculos adicionales :}
+                    \\
+                    \begin{array}{rcl}
+                        \\
+                        \int_{}^{} xe^{-x} \,\mathrm{d}x  & = & -\left(x+1\right)e^{-x}
+                        \\
+                        \\
+                        \int_{0}^{+\infty}xe^{-x}dx & = & \displaystyle\lim_{A\to\infty}\int_{0}^{A}xe^{-x}dx
+                        \\
+                        \\
+                        & = & \displaystyle\lim_{A\to\infty}\left[-\left(x+1\right)e^{-x}\right]\vert_{0}^{A}
+                        \\
+                        \\
+                        & = & \displaystyle\lim_{A\to\infty} \left[-\left(A+1\right)e^{-A}\right] +1 
+                        \\
+                        \\
+                        \int_{0}^{+\infty}xe^{-x}dx & = & 1
+                    \end{array}
+                \end{array}
+            \end{array}
+        \end{equation*}
+    \end{center}
+    
+    \begin{flushleft}
+        Por lo tanto :  \fbox{$f_{Y}(Y) = e^{-y}$}
+    \end{flushleft}
+   
+    \begin{flushleft}
+        Vamos a calcular  $EX$   y $EY$
+    \end{flushleft}
+         
+    \begin{equation*}
+        \begin{array}{rcccccl}
+            EX & = & \displaystyle \int_{0}^{-\infty}x f_{X}(X)dx & = & \displaystyle \int_{0}^{+\infty}x^{2}e^{-x}dx & = & 2
+            \\
+            \\
+            EY & = &\displaystyle \int_{0}^{-\infty}y f_{Y}(Y)dy & = & \displaystyle \int_{0}^{+\infty}ye^{-y}dy & = & 1
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Tenemos entonces que : \fbox{$EX = 2$}\hspace{1cm} \fbox{$EY = 1$}
+    \end{flushleft}
+
+    \vspace{0.5cm} 
 
     \begin{flushleft}
         Vamos ahora a calcular $EX^2 $ y $EY^2$  
@@ -443,4 +557,257 @@
     \begin{equation*}
         \rho \left(X,Y\right) = \displaystyle \frac{cov \left(X,Y\right)}{\sqrt{V\left(X\right)V\left(Y\right)}} = \frac{0}{\sqrt{2}} = 0 
     \end{equation*}
+
+
+
+
+
+
+    \section*{Ejercicio 4 } 
+
+    \begin{flushleft}
+        Sea $\left(X,Y\right)$  un vector aleatorio con funcion de densidad conjunta 
+    \end{flushleft}
+
+    \begin{equation*}
+        f\left(x,y\right) = \begin{cases}
+            \frac{1}{2x^2} & \mbox{si $ | x | < 1 , 0 \leq y \leq x^2$}
+            \\
+            0 & \mbox{en otro caso}
+        \end{cases}
+    \end{equation*}
+
+    \subsection*{a-) Halle las funciones de densidad marginal de $X$ y de $Y$}
+
+    \begin{flushleft}
+        Primero vamos a calcular $f_{X}\left(x\right)$ 
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle f_{X}\left(x\right) & = & \displaystyle \int_{-\infty}^{+ \infty} f \left(x,y\right) \,\mathrm{d}y
+            \\
+            \\
+            & =  & \displaystyle \int_{0}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y   
+            \\
+            \\
+            & = & \displaystyle \frac{1}{2x^2} \left[y\right] \vert_{0}^{x^2}
+            \\
+            \\
+            & = & \displaystyle \frac{x^2}{2x^2}
+            \\
+            \\
+            \displaystyle f_{X}\left(x\right) & = & \frac{1}{2} 
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Ahora vamos a calcular $f_{Y} \left(y\right)$
+    \end{flushleft}
+
+    
+
+    \begin{center}
+         {\bf Aqui hay que rectificar el calculo de $f_{Y}\left(y\right)$} 
+    \end{center}
+
+
+    \subsection*{b) Calcule  $P\left(Y > 0,25 \right) $y $P \left(X > −0.5, Y < 0.64\right)$.}
+    
+    \vspace{0.5cm}
+    \begin{flushleft}
+        Vamos primero a calcular $P \left(Y > \frac{1}{4}\right)$ , tenemos : 
+    \end{flushleft}
+
+    \begin{equation*}
+        P\left(Y>\frac{1}{4}\right) = \displaystyle \int_{-1}^{- \frac{1}{2}} \int_{\frac{1}{4}}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x  + \int_{1}^{2} \int_{\frac{1}{4}}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x 
+    \end{equation*}
+
+    \begin{flushleft}
+        Vamos a calcular $\displaystyle \int_{-1}^{- \frac{1}{2}} \int_{\frac{1}{4}}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x $
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle \int_{-1}^{- \frac{1}{2}} \int_{\frac{1}{4}}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x  & = & \displaystyle  \frac{1}{2} \int_{-1}^{- \frac{1}{2}} \left(\int_{\frac{1}{4}}^{x^2}x^{-2}\,\mathrm{d}y \right) \,\mathrm{d}x 
+            \\
+            \\
+            && \mbox{tenemos que: $\displaystyle \int_{\frac{1}{4}}^{x^2}x^{-2}\,\mathrm{d}y  = 1 - \frac{1}{4} x^{-2}$} 
+            \\
+            && \mbox{por lo tanto : }
+            \\
+            \\
+            & = & \displaystyle  \frac{1}{2} \int_{-1}^{- \frac{1}{2}} \left(1 - \frac{1}{4} x^{-2}\right) \,\mathrm{d}x 
+            \\
+            \\
+            && \mbox{tenemos : $\displaystyle  \int_{-1}^{- \frac{1}{2}} \left(1 - \frac{1}{4} x^{-2}\right) \,\mathrm{d}x = \frac{1}{4} $}
+            \\
+            \mbox{Por lo tanto: }
+            \\
+            \\
+            \displaystyle \int_{-1}^{- \frac{1}{2}} \int_{\frac{1}{4}}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x & = & \displaystyle \left(\frac{1}{2} \right) \left(\frac{1}{4}\right) = \frac{1}{8}
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        vamos ahora a calcular : $\displaystyle \int_{1}^{2} \int_{\frac{1}{4}}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x$
+    \end{flushleft}
+
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle \int_{\frac{1}{2}}^{1} \int_{\frac{1}{4}}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x  & = & \displaystyle  \frac{1}{2} \int_{\frac{1}{2}}^{1} \left(\int_{\frac{1}{4}}^{x^2}x^{-2}\,\mathrm{d}y \right) \,\mathrm{d}x 
+            \\
+            \\
+            && \mbox{tenemos que: $\displaystyle \int_{\frac{1}{4}}^{x^2}x^{-2}\,\mathrm{d}y  = 1 - \frac{1}{4} x^{-2}$} 
+            \\
+            && \mbox{por lo tanto : }
+            \\
+            \\
+            & = & \displaystyle  \frac{1}{2} \int_{\frac{1}{2}}^{1} \left(1 - \frac{1}{4} x^{-2}\right) \,\mathrm{d}x 
+            \\
+            \\
+            && \mbox{tenemos : $\displaystyle  \int_{\frac{1}{2}}^{1} \left(1 - \frac{1}{4} x^{-2}\right) \,\mathrm{d}x = \frac{1}{4} $}
+            \\
+            \mbox{Por lo tanto: }
+            \\
+            \\
+            \displaystyle \int_{\frac{1}{2}}^{1} \int_{\frac{1}{4}}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x & = & \displaystyle \left(\frac{1}{2} \right) \left(\frac{1}{4}\right) = \frac{1}{8}
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Podemos concluir entonces que : 
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            P\left(Y>\frac{1}{4}\right) &= &  \displaystyle \int_{-1}^{- \frac{1}{2}} \int_{\frac{1}{4}}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x  + \int_{1}^{2} \int_{\frac{1}{4}}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x         
+            \\
+            \\
+            P\left(Y>\frac{1}{4}\right) &= & \displaystyle  \frac{1}{8} + \frac{1}{8} = \frac{1}{4}
+        \end{array}
+    \end{equation*}
+
+    \vspace{1cm}
+
+    \begin{flushleft}
+        Vamos ahora a calcular $P\left(X> - 0.5 , Y < 0.64\right)$ , tenemos :    
+    \end{flushleft}
+
+    \begin{equation*}
+        P\left(X> - \frac{1}{2} , Y < 0.64\right) = \displaystyle \int_{-\frac{1}{2}}^{\frac{4}{5}} \int_{0}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x  + \displaystyle \int_{\frac{4}{5}}^{1} \int_{0}^{0.64} \frac{1}{2x^2} \,\mathrm{d}y \,\mathrm{d}x
+    \end{equation*}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle \int_{-\frac{1}{2}}^{\frac{4}{5}} \int_{0}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x  & = & \displaystyle \frac{1}{2} \int_{-\frac{1}{2}}^{\frac{4}{5}} \left(\int_{0}^{x^2} x^{-2} \,\mathrm{d}y \right)  \,\mathrm{d}x 
+            \\
+            \\
+            && \mbox{tenemos que  $\displaystyle \int_{0}^{x^2} x^{-2} \,\mathrm{d}y  = 1 $}
+            \\
+            && \mbox{por lo tanto } 
+            \\
+            \\
+            \displaystyle \int_{-\frac{1}{2}}^{\frac{4}{5}} \int_{0}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x  & = & \displaystyle \frac{1}{2} \int_{-\frac{1}{2}}^{\frac{4}{5}}   \,\mathrm{d}x  
+            \\
+            \\
+            & = & \displaystyle \frac{1}{2} \left(\left[x\right] \vert_{-\frac{1}{2}}^{\frac{4}{5}} \right)
+            \\
+            \\
+            & = & \displaystyle \frac{1}{2} \left(\frac{4}{5} + \frac{1}{2}\right) = \left(\frac{1}{2}\right) \left(\frac{13}{10}\right) 
+            \\
+            \\
+            \displaystyle \int_{-\frac{1}{2}}^{\frac{4}{5}} \int_{0}^{x^2} \frac{1}{2x^2} \,\mathrm{d}y  \,\mathrm{d}x & = & \displaystyle \frac{13}{20} 
+        \end{array}
+    \end{equation*}
+
+    \hspace{1cm}
+
+    \begin{flushleft}
+        ahora calculamos la $ \displaystyle \int_{\frac{4}{5}}^{1} \int_{0}^{0.64} \frac{1}{2x^2} \,\mathrm{d}y \,\mathrm{d}x $
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle \int_{\frac{4}{5}}^{1} \int_{0}^{0.64} \frac{1}{2x^2} \,\mathrm{d}y \,\mathrm{d}x & = & \displaystyle  \frac{1}{2} \int_{\frac{4}{5}}^{1} \left(\int_{0}^{0.64} x^{-2} \,\mathrm{d}y \right) \,\mathrm{d}x 
+            \\
+            \\
+            && \mbox{tenemos que $ \displaystyle \int_{0}^{0.64} x^{-2} \,\mathrm{d}y = \frac{64}{100}x^{-2} $}
+            \\
+            && \mbox{por lo tanto} 
+            \\
+            \\
+            \displaystyle \int_{\frac{4}{5}}^{1} \int_{0}^{0.64} \frac{1}{2x^2} \,\mathrm{d}y \,\mathrm{d}x & = & \displaystyle  \frac{1}{2}\displaystyle \int_{\frac{4}{5}}^{1} \left(\frac{64}{100} x^{-2}\right) \,\mathrm{d}x
+            \\
+            \\
+            & = & \displaystyle \left(\frac{1}{2}\right) \left(\frac{64}{100}\right) \int_{\frac{4}{5}}^{1} x^{-2} \,\mathrm{d}x 
+            \\
+            \\
+            && \mbox{tenemos que $ \displaystyle \int_{\frac{4}{5}}^{1} x^{-2} \,\mathrm{d}x$} = \frac{1}{4}
+            \\
+            && \mbox{por lo tanto } 
+            \\
+            \\
+            & = & \displaystyle \left(\frac{1}{2}\right) \left(\frac{64}{100}\right) \left(\frac{1}{4}\right) = \left(\frac{1}{2}\right) \left(\frac{16}{100}\right)
+            \\
+            \\
+            \displaystyle \int_{\frac{4}{5}}^{1} \int_{0}^{0.64} \frac{1}{2x^2} \,\mathrm{d}y \,\mathrm{d}x & = & \displaystyle \frac{8}{100} = 0.08
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Por lo que podemos concluir que : 
+    \end{flushleft}
+
+    \begin{equation*}
+        P\left(X> - \frac{1}{2} , Y < 0.64\right) = \frac{13}{20} + \frac{8}{100} = \frac{73}{100} = 0.73
+    \end{equation*}
+
+
+    \vspace{2cm} 
+    \section*{Ejercicio 5 }
+
+    \subsection*{Determinar el valor de la constante $c$}
+
+    \begin{flushleft}
+        Sabemos que $ \displaystyle \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f\left(x,y\right) \,\mathrm{d}x  \,\mathrm{d}y   =1 $
+    \end{flushleft}
+
+    \begin{flushleft}
+        Para nuestro caso tenemos que $\displaystyle \int_{0}^{2} \int_{0}^{x} c\left(x+y \right) \,\mathrm{d}y \,\mathrm{d}x   =1 $ , entonces : 
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle \int_{0}^{2} \int_{0}^{x} c\left(x+y \right) \,\mathrm{d}y \,\mathrm{d}x  & = & \displaystyle c  \int_{0}^{2} \left( \int_{0}^{x} \left(x+y \right) \,\mathrm{d}y \right)\,\mathrm{d}x 
+            \\
+            \\
+            && \mbox{pero la $ \displaystyle  \int_{0}^{x} \left(x+y \right) \,\mathrm{d}y = x^2 + \frac{x^2}{2} $}
+            \\
+            && \mbox{por lo que tenemos : }
+            \\
+            \\
+            & = &  \displaystyle c  \int_{0}^{2} \left(x^2 + \frac{x^2}{2}\right)\,\mathrm{d}x 
+            \\
+            \\
+            && \mbox{tenemos que $ \displaystyle \int_{0}^{2} \left(x^2 + \frac{x^2}{2}\right)\,\mathrm{d}x  = \frac{10}{3}$ }
+            \\
+            \mbox{Por lo que tenemos  :}&&
+            \\
+            \\
+            \displaystyle \int_{0}^{2} \int_{0}^{x} c\left(x+y \right) \,\mathrm{d}y \,\mathrm{d}x  & = & \displaystyle c \left(\frac{10}{3}\right)
+            \\
+            \\
+            \mbox{Si sustituimos aqui }&&
+            \\
+            \\
+            1 & = & \displaystyle c \left(\frac{10}{3}\right)
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Por lo que nos queda que : $ \displaystyle c = \frac{3}{10}$
+    \end{flushleft}
+
 \end{document}
