@@ -1051,6 +1051,30 @@
         \end{array}
     \end{equation*}
 
+    \begin{flushleft}
+        Entonces la funci\'on de densidad marginal de $X$ es     
+    \end{flushleft}
+
+    \begin{equation*}
+        f_X\left(x\right) = \begin{cases} 
+            \frac{1}{x} & 1\leq x \leq e  
+            \\
+            0  & \mbox{en otro caso }
+            \end{cases}
+    \end{equation*}
+
+    \begin{flushleft}
+        Y la funci\'on de densidad marginal de $Y$ es     
+    \end{flushleft}
+
+    \begin{equation*}
+        f_Y\left(y\right) = \begin{cases} 
+            \frac{y}{2} & 0 \leq y \leq 2  
+            \\
+            0  & \mbox{en otro caso }
+            \end{cases}
+    \end{equation*}
+
     \subsection*{Respuesta del (inciso 3-c)} 
 
     \begin{flushleft}
@@ -1294,9 +1318,18 @@
 
     
 
-    \begin{center}
-         {\bf Aqui hay que rectificar el calculo de $f_{Y}\left(y\right)$} 
-    \end{center}
+    \begin{flushleft}
+        Si hacemos lo mismo que  con $Y$ obtenemos que : 
+    \end{flushleft}
+         
+    \begin{equation*}
+        \begin{array}{rcl}
+            f_Y\left(y\right) & = & \displaystyle \int_{- \infty}^{+ \infty} f \left(x,y \right) \,\mathrm{d}x 
+            \\
+            \\
+            & = & \displaystyle  \frac{1}{\sqrt{y}} -1 
+        \end{array}
+    \end{equation*}
 
 
     \subsection*{b) Calcule  $P\left(Y > 0,25 \right) $y $P \left(X > −0.5, Y < 0.64\right)$.}
@@ -1451,6 +1484,16 @@
         P\left(X> - \frac{1}{2} , Y < 0.64\right) = \frac{13}{20} + \frac{8}{100} = \frac{73}{100} = 0.73
     \end{equation*}
 
+
+    \subsection*{c) Diga si las variables son independientes.}
+
+    \begin{flushleft}
+        Las variables no son independientes pues no se cumple : 
+    \end{flushleft}
+
+    \begin{equation*}
+        f_{\left(X,Y\right)}\left(x,y\right) = f_X\left(x\right) f_Y\left(y\right) 
+    \end{equation*}
 
     \vspace{2cm} 
     \section*{Ejercicio 5 }
