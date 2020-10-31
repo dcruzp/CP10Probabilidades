@@ -1457,37 +1457,78 @@
 
 
 
-    \section*{Respuesta del Ejercicio 8} Tenemos que $ X y Y$ son variables aleatorias continuas independientes con funciones de densidad $f_{X}(x) y f_{Y}(y)$
-    \\
-    Primero la funcion de distribuci\'on de X + Y la obtenemos por : 
-     \begin{equation*}
-     \begin{array}{rcl}
-     F_{X + Y}(a) & = & \displaystyle P\{X+Y \leq a\}
-     \\
-     \\
-     F_{X + Y}(a) & = & \displaystyle\iint_{X+Y \leq a} f_X(x)f_Y(y)dxdy
-     \\
-     \\
-     F_{X + Y}(a) & = & \displaystyle\int_{-\infty}^{+\infty}\int_{-\infty}^{a-y} f_X(x)f_Y(y)dxdy
-     \\
-     \\
-     F_{X + Y}(a) & = & \displaystyle\int_{-\infty}^{+\infty}\int_{-\infty}^{a-y} f_X(x)dx f_Y(y)dy
-     \\
-     \\
-     F_{X + Y}(a) & = & \displaystyle\int_{-\infty}^{+\infty} F_X(a-y) f_Y(y)dy
-     \end{array}
-     \end{equation*}
-     Ahora como tenemos la funci\'on de distribuci\'on de $X+Y$ podemos entoces encontrar la funci\'on de densidad $f_{X+Y}$ de $ X+Y$ de la siguiente forma :
-     \begin{equation*}
-     \begin{array}{rcl}
-     f_{X + Y}(a) & = & \displaystyle\frac{d}{da}\int_{-\infty}^{+\infty}F_X\left(a-y\right)f_Y(y)dy
-     \\
-     \\
-     f_{X + Y}(a) & = & \displaystyle\int_{-\infty}^{+\infty}\frac{d}{da}F_X\left(a-y\right)f_Y(y)dy
-     \\
-     \\
-     f_{X + Y}(a) & = & \int_{-\infty}^{+\infty}f_X\left(a-y\right)f_Y(y)dy
-     \end{array}
+
+    \section*{Ejercicio 7} 
+
+    \begin{flushleft}
+        Como $X$,$Y$ y $Z$ son i.i.d  con distribuci\'on uniforme sobre el intervalo  $\left(0,1\right)$, entonces :
+    \end{flushleft}
+    
+    \begin{equation*}
+    f_{X,Y,Z}\left(x,y,z\right) = f_X\left(x\right) f_Y\left(y\right) f_Z\left(z\right) \hspace{1cm}0\leq x \leq 1\leq y \leq 1\leq z \leq 1
+    \end{equation*}
+    
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle P\left(Z>XY\right) & = & \displaystyle \iiint_{z>xy} f_{X,Y,Z} dzdydx
+            \\
+            \\
+            & = & \displaystyle\int_{0}^{1}\int_{0}^{1}\int_{xy}^{1}  dzdydx
+            \\
+            \\
+            & = & \displaystyle\int_{0}^{1}\int_{0}^{1}\left(1-xy\right)dydx
+            \\
+            \\
+            & = &  \displaystyle\int_{0}^{1}\frac{-x+2}{2}dx
+            \\
+            \\
+            & = & \displaybreak \frac{3}{4}
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        La probabilidad $P\left(Z > XY\right)$ es de $\frac{3}{4}$
+    \end{flushleft}
+
+
+    \section*{Ejercicio 8} Tenemos que $ X y Y$ son variables aleatorias continuas independientes con funciones de densidad $f_{X}(x) y f_{Y}(y)$
+    
+    \begin{flushleft}
+        Primero la funcion de distribuci\'on de $X + Y$ la obtenemos por :
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            F_{X + Y}(a) & = & \displaystyle P\{X+Y \leq a\}
+            \\
+            \\
+            F_{X + Y}(a) & = & \displaystyle\iint_{X+Y \leq a} f_X(x)f_Y(y)dxdy
+            \\
+            \\
+            F_{X + Y}(a) & = & \displaystyle\int_{-\infty}^{+\infty}\int_{-\infty}^{a-y} f_X(x)f_Y(y)dxdy
+            \\
+            \\
+            F_{X + Y}(a) & = & \displaystyle\int_{-\infty}^{+\infty}\int_{-\infty}^{a-y} f_X(x)dx f_Y(y)dy
+            \\
+            \\
+            F_{X + Y}(a) & = & \displaystyle\int_{-\infty}^{+\infty} F_X(a-y) f_Y(y)dy
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Ahora como tenemos la funci\'on de distribuci\'on de $X+Y$ podemos entoces encontrar la funci\'on de densidad $f_{X+Y}$ de $ X+Y$ de la siguiente forma :
+    \end{flushleft}
+     
+    \begin{equation*}
+        \begin{array}{rcl}
+            f_{X + Y}(a) & = & \displaystyle\frac{d}{da}\int_{-\infty}^{+\infty}F_X\left(a-y\right)f_Y(y)dy
+            \\
+            \\
+            f_{X + Y}(a) & = & \displaystyle\int_{-\infty}^{+\infty}\frac{d}{da}F_X\left(a-y\right)f_Y(y)dy
+            \\
+            \\
+            f_{X + Y}(a) & = & \int_{-\infty}^{+\infty}f_X\left(a-y\right)f_Y(y)dy
+        \end{array}
      \end{equation*}
 
 
