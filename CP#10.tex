@@ -161,6 +161,45 @@
     \subsection*{1-b) Determinar si las variables $X$ y $Y$ son independientes y $\rho \left(X,Y\right)$}
     
     \begin{flushleft}
+        Vamos a comprobar que $F_{X,Y}\left(x,y\right) = F_Y\left(y\right) F_X\left(x\right)$
+    \end{flushleft}
+
+    \begin{flushleft}
+        Entonces tenemos que : 
+    \end{flushleft}
+
+    \begin{equation*}
+        \begin{array}{rcl}
+            \displaystyle F_{X,Y} \left(x,y\right) & = & \displaystyle \int_{- \infty}^{y} \int_{-\infty}^{x} f \left(u,v \right) \,\mathrm{d}u  \,\mathrm{d}v
+            \\
+            \\
+            & = & \displaystyle \int_{0}^{y}  \int_{0}^{x} u e^{-\left(u+v\right)} \,\mathrm{d}u \,\mathrm{d}v 
+            \\
+            \\
+            & = & \displaystyle \int_{0}^{y} e^{-v} \int_{0}^{x} u e^{-u} \,\mathrm{d}u \,\mathrm{d}v
+            \\
+            \\
+            &= & \displaystyle \int_{0}^{y} e^{-v} \,\mathrm{d}v \left(\frac{e^x - x -1 }{e^x}\right)  
+            \\
+            \\
+            & = &\displaystyle \frac{e^y -1 }{e^y} \left(1 - \frac{x-1}{e^x}\right)
+            \\
+            \\
+            & = & \displaystyle \left(1 - e^{-y}\right) \left(1- \frac{x-1}{e^x}\right)
+            \\
+            \\
+            \displaystyle F_{X,Y} \left(x,y\right)& = & \displaystyle  F_Y\left(y\right) F_X\left(x\right)
+        \end{array}
+    \end{equation*}
+
+    \begin{flushleft}
+        Entonces las variables aleatorias $X$ y $Y$ son independientes   
+    \end{flushleft}
+
+    \vspace{1cm}
+
+
+    \begin{flushleft}
         Para calcular $\rho \left(X,Y\right)$  tenemos que calcular primero : $E\left[XY\right]$ , $EX$, $EY$ , $EX^2$ y $EY^2$   
     \end{flushleft}
     
@@ -728,6 +767,9 @@
         \end{equation*}
     \end{center}
 
+    \begin{flushleft}
+        Entonces podemos decir que $P \left(X > 0 , Y  < \frac{1}{2}\right) = \frac{3}{4}$
+    \end{flushleft}
 
     \subsection*{Respuesta del (inciso 2-c)}
     \begin{flushleft}
